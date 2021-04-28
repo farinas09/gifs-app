@@ -9,8 +9,8 @@ export const GifGrid = ({category}) => {
     return (
         <>
         <h3 className="animate__fadeIn">{category}</h3>
-        { loading && <p>Loading</p> }
-        <div className="card-grid animate__fadeIn">
+        { loading && <div class="alert alert-primary" role="alert">Loading</div> }
+        <div className="card-grid album py-5 bg-light animate__fadeIn">
                 {
                     images.map( (img) => (
                     <GifGridItem
