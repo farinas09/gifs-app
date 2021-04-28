@@ -1,34 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { GifGridItem } from './GifGridItem';
+import { useFetchGifs } from '../hooks/useFetchGifs';
 
 export const GifGrid = ({category}) => {
 
-    const [images, setImages] = useState([]);
-    useEffect(() => {
-        getGifs();
-        //empty dependenciesList to call getGifs once
-    }, []);
-
-    const getGifs = async () => {
-        const url = 'https://api.giphy.com/v1/gifs/search?q=RealMadrid&limit=10&api_key=JbwslOa3XV0cReKk5ipkGtC2yNUfksKU';
-        const res = await fetch(url);
-        const {data} = await res.json();
-
-        const gifs = data.map(img => {
-            return {
-                id: img.id,
-                title: img.title,
-                url: img.images?.downsized_medium.url
-            }
-        });
-
-        console.log(gifs);
-        setImages(gifs);
-    }
+    const {data:images, loading} = useFetchGifs(category);
 
     return (
-        <div>
-            <h3>{category}</h3>
+        <>
+        <h3 className="animate__fadeIn">{category}</h3>
+        { loading && <p>Loading</p> }
+        <div className="card-grid animate__fadeIn">
                 {
                     images.map( (img) => (
                     <GifGridItem
@@ -37,5 +19,6 @@ export const GifGrid = ({category}) => {
                         )) 
                 }
         </div>
+        </>
     )
 }
