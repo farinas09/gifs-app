@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <AddCategory /> should show the component successfully 1`] = `
+<form
+  className="form-group"
+  onSubmit={[Function]}
+>
+  <input
+    className="form-control"
+    onChange={[Function]}
+    placeholder="Search GIFs"
+    type="text"
+    value=""
+  />
+</form>
+`;
