@@ -11,15 +11,16 @@ export const AddCategory = ( {setCategories} ) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log('handlesubmit')
         if( inputValue.trim().length > 2){
-            //Arrow function has access to current state
         setCategories( cats => [inputValue, ...cats]);
+        setinputValue('');
     }
-    setinputValue('');
     }
 
     return (
             <form className="form-group" onSubmit={handleSubmit}>
+                <p>{inputValue}</p>
             <input className="form-control"
                 placeholder="Search GIFs"
                 type="text"

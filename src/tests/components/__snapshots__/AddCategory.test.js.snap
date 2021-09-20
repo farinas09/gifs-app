@@ -5,6 +5,7 @@ exports[`Pruebas en <AddCategory /> should show the component successfully 1`] =
   className="form-group"
   onSubmit={[Function]}
 >
+  <p />
   <input
     className="form-control"
     onChange={[Function]}
