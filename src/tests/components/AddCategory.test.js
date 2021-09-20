@@ -37,11 +37,9 @@ describe('Pruebas en <AddCategory />', () =>{
         const input = wrapper.find('input');
         const value = 'Hello World';
         input.simulate('change', {target: {value}});
-        console.log(input.props())
         wrapper.find('form').simulate('submit', {preventDefault(){}});
 
         expect(setCategories).toHaveBeenCalled();
-        
         expect(input.text()).toBe('');
         
     })
