@@ -12,5 +12,4 @@ describe('getGifs fetch test', () => {
         expect(gifs.length).toBe(0);
     })
     
-    
 })

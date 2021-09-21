@@ -22,15 +22,12 @@ describe('Pruebas en <AddCategory />', () =>{
         input.simulate('change', {target: {value}});
 
         expect(wrapper.find('p').text().trim()).toBe(value)
-
-        
     })
 
     test('should not send the information on submit without inputValue', () => {
         wrapper.find('form').simulate('submit', {preventDefault(){}});
 
         expect(setCategories).not.toHaveBeenCalled()
-        
     })
 
     test('should call setCategories and clean input', () => {
