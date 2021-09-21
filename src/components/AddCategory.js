@@ -19,7 +19,6 @@ export const AddCategory = ( {setCategories} ) => {
 
     return (
             <form className="form-group" onSubmit={handleSubmit}>
-                <p>{inputValue}</p>
             <input className="form-control"
                 placeholder="Search GIFs"
                 type="text"
