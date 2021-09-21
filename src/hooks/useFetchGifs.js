@@ -15,7 +15,6 @@ export const useFetchGifs = (category) => {
                 loading: false
             });
         });
-        //empty dependenciesList to call getGifs once
     }, [category]);
 
     return state;
