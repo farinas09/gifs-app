@@ -16,6 +16,12 @@ exports[`Pruebas en <GifGrid /> should show items when usefetch load data 1`] = 
       title="text"
       url="https://xdxd.com/png"
     />
+    <GifGridItem
+      id="123"
+      key="123"
+      title="text"
+      url="https://xdxd.com/png"
+    />
   </div>
 </Fragment>
 `;

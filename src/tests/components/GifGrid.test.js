@@ -21,9 +21,13 @@ describe('Pruebas en <GifGrid />', () =>{
     })
 
     test('should show items when usefetch load data', () => {
-
         const gifs = [{
             id: 'abc',
+            url: 'https://xdxd.com/png',
+            title: 'text'
+        },
+        {
+            id: '123',
             url: 'https://xdxd.com/png',
             title: 'text'
         }]
@@ -34,6 +38,8 @@ describe('Pruebas en <GifGrid />', () =>{
         
     const wrapper = shallow(<GifGrid category={category} />)
         expect( wrapper ).toMatchSnapshot();
+        expect(wrapper.find('p').exists()).toBe(false);
+        expect(wrapper.find('GifGridItem').length).toBe(gifs.length);
         
     })
     
